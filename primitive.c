@@ -11,13 +11,14 @@ bool is_primitive_root(int g, int p) {
             values[i - 1] = (values[i - 1] * g) % p;
         }
     }
-    // Printing array
-    printf("Array values: ");
+
+    printf("Calculation: \n");
     for (int i = 0; i < p - 1; i++) {
-        printf("%d ", values[i]);
+         printf("%d^%d mod %d = %d \n",g,i+1,p,values[i]);
     }
     printf("\n");
 
+   
     // check for distinct values
     for (int i = 0; i < p - 2; i++) {
         for (int j = i + 1; j < p - 1; j++) {
@@ -37,7 +38,7 @@ int main() {
     scanf("%d", &g);
 
     if (is_primitive_root(g, p)) {
-        printf("%d is a primitive root modulo %d\n", g, p);
+        printf("%d is a primitive root modulo %d\n\n\n", g, p);
     } else {
         printf("%d is not a primitive root modulo %d\n", g, p);
     }
